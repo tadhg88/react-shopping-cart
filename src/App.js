@@ -13,6 +13,17 @@ class App extends Component {
     ],
   };
 
+  constructor() {
+    super();
+    console.log("Constuctor called");
+  }
+
+  componentDidMount() {
+    // called after the component is rendered into the DOM
+    // perfect place to call ajax methods to get data from the server
+    console.log("Component mounted");
+  }
+
   handleIncrement = (counter) => {
     console.log("event called: ", counter);
     const counters = [...this.state.counters];
@@ -39,6 +50,8 @@ class App extends Component {
   };
 
   render() {
+    console.log("Component rendered");
+
     return (
       <React.Fragment>
         <NavBar
